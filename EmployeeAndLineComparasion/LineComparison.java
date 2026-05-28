@@ -1,7 +1,7 @@
 package EmployeeAndLineComparasion;
 
 public class LineComparison {
-    public class LineComparison {
+    
 
     public static void main(String[] args) {
 
@@ -10,4 +10,4 @@ public class LineComparison {
     }
 }
     
-}
+
