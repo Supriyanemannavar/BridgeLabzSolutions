@@ -4,7 +4,6 @@ import java.util.ArrayList;
 public class EmployeeWage {
     static class Employee {
 
-    // Class Variables
     static final int IS_PART_TIME = 1;
     static final int IS_FULL_TIME = 2;
 
@@ -12,15 +11,15 @@ public class EmployeeWage {
     static final int NUM_OF_WORKING_DAYS = 20;
     static final int MAX_HRS_IN_MONTH = 100;
 
-    // Instance Variable
+    
     String employeeName;
 
-    // Constructor
+    
     Employee(String employeeName) {
         this.employeeName = employeeName;
     }
 
-    // Instance Method
+    
     void calculateWage() {
 
         int empHrs = 0;
@@ -30,16 +29,15 @@ public class EmployeeWage {
         System.out.println("--------------------------------");
         System.out.println("Employee Name : " + employeeName);
 
-        // Calculating Wage till condition reaches
         while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
                totalWorkingDays < NUM_OF_WORKING_DAYS) {
 
             totalWorkingDays++;
 
-            // RANDOM Attendance Check
+           
             int empCheck = (int) (Math.floor(Math.random() * 3));
 
-            // Switch Case
+            
             switch (empCheck) {
 
                 case IS_PART_TIME:
@@ -79,17 +77,17 @@ public class EmployeeWageComputation {
 
     public static void main(String[] args) {
 
-        // Welcome Message
+        
         System.out.println("Welcome to Employee Wage Computation Program");
 
-        // Collection Library
+       
         ArrayList<Employee> employeeList = new ArrayList<>();
 
-        // Objects Creation
+   
         employeeList.add(new Employee("Supriya"));
         employeeList.add(new Employee("Rahul"));
 
-        // Calling Instance Method using Objects
+        
         for (Employee emp : employeeList) {
             emp.calculateWage();
         }
