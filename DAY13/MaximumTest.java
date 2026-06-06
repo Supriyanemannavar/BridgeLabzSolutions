@@ -14,6 +14,20 @@ public class MaximumTest<T extends Comparable<T>> {
     }
 
     // Instance Method
+    public T testMaximum() {
+        return testMaximum(x, y, z);
+    }
+
+    // UC1, UC2, UC3
+    public static <T extends Comparable<T>> T testMaximum(T x, T y, T z) {
+
+        T max = x;
+
+        if (y.compareTo(max) > 0) {
+            max = y;
+        }
+
+        if (z.compareTo(max) > 0) {
             max = z;
         }
 
@@ -21,7 +35,7 @@ public class MaximumTest<T extends Comparable<T>> {
         return max;
     }
 
-  
+    // UC4 - More than 3 parameters
     public static <T extends Comparable<T>> T testMaximum(T... values) {
 
         T max = values[0];
@@ -36,53 +50,48 @@ public class MaximumTest<T extends Comparable<T>> {
         return max;
     }
 
-
+    // UC5
     public static <T> void printMax(T max) {
         System.out.println("Maximum Value : " + max);
     }
 
     public static void main(String[] args) {
 
-        //Max at 1st Position
-        MaximumTest<Integer> int1 =new MaximumTest<>(30, 20, 10);
+        // Integer Test Cases
+        MaximumTest<Integer> int1 = new MaximumTest<>(30, 20, 10);
         int1.testMaximum();
 
-        // Max at 2nd Position
-        MaximumTest<Integer> int2 =new MaximumTest<>(10, 30, 20);
+        MaximumTest<Integer> int2 = new MaximumTest<>(10, 30, 20);
         int2.testMaximum();
 
-        // Max at 3rd Position
-        MaximumTest<Integer> int3 =new MaximumTest<>(10, 20, 30);
+        MaximumTest<Integer> int3 = new MaximumTest<>(10, 20, 30);
         int3.testMaximum();
 
-        // Max at 1st Position
-        MaximumTest<Float> float1 =new MaximumTest<>(30.5f, 20.5f, 10.5f);
+        // Float Test Cases
+        MaximumTest<Float> float1 = new MaximumTest<>(30.5f, 20.5f, 10.5f);
         float1.testMaximum();
 
-        // Max at 2nd Position
-        MaximumTest<Float> float2 =new MaximumTest<>(10.5f, 30.5f, 20.5f);
+        MaximumTest<Float> float2 = new MaximumTest<>(10.5f, 30.5f, 20.5f);
         float2.testMaximum();
 
-        //Max at 3rd Position
-        MaximumTest<Float> float3 =new MaximumTest<>(10.5f, 20.5f, 30.5f);
+        MaximumTest<Float> float3 = new MaximumTest<>(10.5f, 20.5f, 30.5f);
         float3.testMaximum();
 
-        // Max at 1st Position
-        MaximumTest<String> str1 =new MaximumTest<>("Peach", "Banana", "Apple");
+        // String Test Cases
+        MaximumTest<String> str1 = new MaximumTest<>("Peach", "Banana", "Apple");
         str1.testMaximum();
 
-        // Max at 2nd Position
-        MaximumTest<String> str2 =new MaximumTest<>("Apple", "Peach", "Banana");
+        MaximumTest<String> str2 = new MaximumTest<>("Apple", "Peach", "Banana");
         str2.testMaximum();
 
-        //  Max at 3rd Position
-        MaximumTest<String> str3 =new MaximumTest<>("Apple", "Banana", "Peach");
+        MaximumTest<String> str3 = new MaximumTest<>("Apple", "Banana", "Peach");
         str3.testMaximum();
 
+        // More than 3 values
         testMaximum(10, 20, 30, 40, 50, 60);
 
         testMaximum(10.5f, 20.5f, 30.5f, 40.5f, 50.5f);
 
-        testMaximum("Apple","Banana","Peach","Orange","Mango");
+        testMaximum("Apple", "Banana", "Peach", "Orange", "Mango");
     }
 }
